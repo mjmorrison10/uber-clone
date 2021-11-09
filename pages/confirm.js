@@ -33,7 +33,6 @@ const Confirm = () => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
         new URLSearchParams({
-          
           access_token:
             "pk.eyJ1IjoibWptb3JyaXNvbjEwIiwiYSI6ImNrdnIxY2RvcTRucDUydm55bml4b2VqdGgifQ.nTLAwuRQ9JcdqHPQ7E7tKg",
           limit: 1,
@@ -50,6 +49,7 @@ const Confirm = () => {
     getDropoffCoordinates(dropoff);
   }, [pickup, dropoff]);
 
+
   return (
     <Wrapper>
       <Link href="/search">
@@ -59,11 +59,11 @@ const Confirm = () => {
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
-      <RideContainer
-        pickupCoordinates={pickupCoordinates}
-        dropoffCoordinates={dropoffCoordinates}
-      >
-        <RideSelector />
+      <RideContainer>
+        <RideSelector
+          pickupCoordinates={pickupCoordinates}
+          dropoffCoordinates={dropoffCoordinates}
+        />
 
         <ConfirmButtonContainer>
           <ConfirmButton>Confirm UberX</ConfirmButton>
