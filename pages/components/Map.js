@@ -6,7 +6,7 @@ import mapboxgl from "mapbox-gl";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWptb3JyaXNvbjEwIiwiYSI6ImNrdnIxY2RvcTRucDUydm55bml4b2VqdGgifQ.nTLAwuRQ9JcdqHPQ7E7tKg";
 
-const map = (props) => {
+const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
@@ -33,6 +33,7 @@ const map = (props) => {
     }
 
 
+
   }, [props.pickupCoordinates, props.dropoffCoordinates]);
 
   const addToMap = (map, coordinates) => {
@@ -44,7 +45,7 @@ const map = (props) => {
   return <Wrapper id="map">map</Wrapper>;
 };
 
-export default map;
+export default Map;
 
 const Wrapper = tw.div`
     flex-1
