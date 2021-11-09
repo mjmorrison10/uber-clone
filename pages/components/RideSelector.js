@@ -34,7 +34,6 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
   );
 };
 
-
 export default RideSelector;
 
 const Wrapper = tw.div`

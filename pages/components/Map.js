@@ -16,30 +16,22 @@ const Map = (props) => {
     });
 
     if (props.pickupCoordinates) {
-        addToMap(map, props.pickupCoordinates);
+      addToMap(map, props.pickupCoordinates);
     }
     if (props.dropoffCoordinates) {
-        addToMap(map, props.dropoffCoordinates);
+      addToMap(map, props.dropoffCoordinates);
     }
 
     if (props.pickupCoordinates && props.dropoffCoordinates) {
-        map.fitBounds([
-            props.dropoffCoordinates,
-            props.pickupCoordinates
-        ], {
-            padding: 60
-        });
-        // addRouteToMap(map, props.pickupCoordinates, props.dropoffCoordinates);
+      map.fitBounds([props.dropoffCoordinates, props.pickupCoordinates], {
+        padding: 60,
+      });
+      // addRouteToMap(map, props.pickupCoordinates, props.dropoffCoordinates);
     }
-
-
-
   }, [props.pickupCoordinates, props.dropoffCoordinates]);
 
   const addToMap = (map, coordinates) => {
-    const marker1 = new mapboxgl.Marker()
-      .setLngLat(coordinates)
-      .addTo(map);
+    const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
   };
 
   return <Wrapper id="map">map</Wrapper>;
@@ -51,4 +43,3 @@ const Wrapper = tw.div`
     flex-1
     h-1/2
     `;
- 
