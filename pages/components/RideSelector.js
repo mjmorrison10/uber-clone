@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
-import { carList } from "../lib/carList";
+import { carList } from "./carList";
 
 const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
   const [rideDuration, setRideDuration] = useState(0);
+
 
   useEffect(() => {
     rideDuration = fetch(
@@ -33,6 +34,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
     </Wrapper>
   );
 };
+
 
 export default RideSelector;
 
