@@ -49,12 +49,13 @@ const Confirm = () => {
     getDropoffCoordinates(dropoff);
   }, [pickup, dropoff]);
 
-
   return (
     <Wrapper>
-      <Link href="/search" passHref>
-        <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
-      </Link>
+      <ButtonContainer>
+        <Link href="/search" passHref>
+          <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+        </Link>
+      </ButtonContainer>
       <Map
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
@@ -101,17 +102,17 @@ py-4
 text-xl
 `;
 
-const BackButton = tw.img`
-h-12
-cursor-pointer
-transition
-transform
-hover:scale-105
-fixed
-left-3 
-top-3
-bg-white
+const ButtonContainer = tw.div`
 rounded-full
-shadow-2xl
-z-10
+absolute
+top-4 
+left-4 
+z-10 
+bg-white 
+shadow-md 
+cursor-pointer`;
+
+const BackButton = tw.img`
+h-full 
+sobject-contain
 `;

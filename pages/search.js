@@ -56,6 +56,7 @@ const Search = () => {
   );
 };
 
+
 export default Search;
 
 const Wrapper = tw.div`

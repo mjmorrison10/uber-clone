@@ -5,7 +5,6 @@ import { carList } from "./carList";
 const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
   const [rideDuration, setRideDuration] = useState(0);
 
-
   useEffect(() => {
     rideDuration = fetch(
       `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}?access_token=pk.eyJ1IjoibWptb3JyaXNvbjEwIiwiYSI6ImNrdnIxY2RvcTRucDUydm55bml4b2VqdGgifQ.nTLAwuRQ9JcdqHPQ7E7tKg`
@@ -14,6 +13,10 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
       .then((data) => {
         setRideDuration(data.routes[0].duration / 100);
       });
+
+
+
+
   }, [pickupCoordinates, dropoffCoordinates]);
 
   return (
@@ -34,6 +37,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
     </Wrapper>
   );
 };
+
 
 
 export default RideSelector;
